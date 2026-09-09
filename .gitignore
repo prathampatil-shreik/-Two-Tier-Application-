@@ -1,0 +1,44 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Terraform variable files - may contain passwords
+terraform.tfvars
+*.tfvars
+!example.tfvars
+
+# Terraform plan files
+*.tfplan
+
+# AWS credentials / keys
+*.pem
+*.key
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Application secrets
+application-local.properties
+application-secret.properties
+
+# Java / Maven
+target/
+*.class
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
