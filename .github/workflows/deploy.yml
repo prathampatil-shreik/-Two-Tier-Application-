@@ -41,10 +41,10 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cp /opt/two-tier-app/two-tier-app-1.0.0.jar /opt/two-tier-app/two-tier-app.jar
+            cp /opt/two-tier-app/app/target/two-tier-app-1.0.0.jar /opt/two-tier-app/two-tier-app.jar
 
             sudo systemctl restart two-tier-app
 
             sleep 15
 
-            sudo systemctl status two-tier-app --no-pager
+            sudo systemctl status two-tier-app --no-pager -l
