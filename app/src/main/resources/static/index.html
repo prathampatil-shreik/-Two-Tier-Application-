@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Tier Application</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Two-Tier Application</h1>
+            <p class="subtitle">Connected to AWS RDS MySQL Database</p>
+        </header>
+
+        <section class="card">
+            <h2>Send a Message</h2>
+            <p class="description">
+                This application demonstrates a two-tier architecture running on AWS.
+                Your message will be saved to an Amazon RDS MySQL database.
+            </p>
+            <form id="messageForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Enter your message" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Save Message</button>
+            </form>
+            <div id="formStatus" class="status-message hidden"></div>
+        </section>
+
+        <section class="card">
+            <div class="section-header">
+                <h2>Saved Messages</h2>
+                <button onclick="loadMessages()" class="btn-secondary">Refresh</button>
+            </div>
+            <div id="messagesList">
+                <p class="loading">Loading messages...</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Two-Tier App &mdash; EC2 + RDS MySQL &mdash;
+                <a href="/actuator/health" target="_blank">Health Check</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>
